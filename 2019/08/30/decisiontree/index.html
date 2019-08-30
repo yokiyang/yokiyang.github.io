@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://yokiyang.github.io/images/decisiontreeImg/15.PNG">
 <meta property="og:image" content="https://yokiyang.github.io/images/decisiontreeImg/16.PNG">
 <meta property="og:image" content="https://yokiyang.github.io/images/decisiontreeImg/17.PNG">
-<meta property="og:image" content="https://yokiyang.github.io/images/decisiontreeImg/79.PNG">
+<meta property="og:image" content="https://yokiyang.github.io/images/decisiontreeImg/79.png">
 <meta property="og:image" content="https://yokiyang.github.io/images/decisiontreeImg/80.png">
 <meta property="og:image" content="https://yokiyang.github.io/images/decisiontreeImg/20.PNG">
 <meta property="og:image" content="https://yokiyang.github.io/images/decisiontreeImg/21.PNG">
@@ -95,7 +95,7 @@
 <meta property="og:image" content="https://yokiyang.github.io/images/decisiontreeImg/77.PNG">
 <meta property="og:image" content="https://yokiyang.github.io/images/decisiontreeImg/78.PNG">
 <meta property="og:image" content="https://yokiyang.github.io/images/decisiontreeImg/81.PNG">
-<meta property="og:updated_time" content="2019-08-30T07:52:39.714Z">
+<meta property="og:updated_time" content="2019-08-30T07:55:11.548Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="决策树">
 <meta name="twitter:description" content="决策树–基础决策树是附加概率结果的一个树状的决策图，是直观的运用统计概率分布的图法。机器学习中决策树是一个预测模型，它表示对象属性和对象值之间的一种映射，树中的每一个节点表示对象属性的判断条件，其分支表示符合节点条件的对象。树的叶子节点表示对象所属的预测结果。">
@@ -268,7 +268,7 @@
 <h3 id="（1）信息增益"><a href="#（1）信息增益" class="headerlink" title="（1）信息增益"></a>（1）信息增益</h3><p>用信息增益表示分裂前后跟的数据复杂度和分裂节点数据复杂度的变化值，计算公式表示为：<br><img src="../../../../images/decisiontreeImg/14.PNG" alt="Alt text"><br><img src="../../../../images/decisiontreeImg/50.PNG" alt="Alt text"><br>其中Gain表示节点的复杂度，Gain越高，说明复杂度越高。信息增益说白了就是分裂前的数据复杂度减去孩子节点的数据复杂度的和，信息增益越大，分裂后的复杂度减小得越多，分类的效果越明显。<br>节点的复杂度可以用以下两种不同的计算方式：  </p>
 <ul>
 <li>熵<br>熵描述了数据的混乱程度，熵越大，混乱程度越高，也就是纯度越低；反之，熵越小，混乱程度越低，纯度越高。熵的计算公式如下所示：<br><img src="../../../../images/decisiontreeImg/15.PNG" alt="Alt text"><br>其中pi表示类i的数量占比。以二分类为题为例，如果两类的数量相同，此时分类节点的纯度最低，熵等于1；如果节点的数据属于同一类时，此时节点的纯度最高，熵等于0。  </li>
-<li>基尼值<br>基尼值计算公式如下：<br><img src="../../../../images/decisiontreeImg/16.PNG" alt="Alt text"><br>其中pi表示类i的数量占比。其同样以上述熵的二分类例子为例，当两类数量相等时，基尼值等于0.5；当节点数据属于同一类时，基尼值等于0。基尼值越大，数据越不纯。<br>例：<br>以熵作为节点复杂度的统计量，分布求出下面例子的信息增益，下图1表示节点选择属性1进行分裂的记过，图2表示节点选择属性2进行分裂的结果，通过计算两个属性分裂后的信息增益，选择最优的分裂属性。<br><img src="../../../../images/decisiontreeImg/17.PNG" alt="Alt text"><br>属性1：<br><img src="../../../../images/decisiontreeImg/79.PNG" alt="Alt text"><br>属性2：<br><img src="../../../../images/decisiontreeImg/80.png" alt="Alt text">  </li>
+<li>基尼值<br>基尼值计算公式如下：<br><img src="../../../../images/decisiontreeImg/16.PNG" alt="Alt text"><br>其中pi表示类i的数量占比。其同样以上述熵的二分类例子为例，当两类数量相等时，基尼值等于0.5；当节点数据属于同一类时，基尼值等于0。基尼值越大，数据越不纯。<br>例：<br>以熵作为节点复杂度的统计量，分布求出下面例子的信息增益，下图1表示节点选择属性1进行分裂的记过，图2表示节点选择属性2进行分裂的结果，通过计算两个属性分裂后的信息增益，选择最优的分裂属性。<br><img src="../../../../images/decisiontreeImg/17.PNG" alt="Alt text"><br>属性1：<br><img src="../../../../images/decisiontreeImg/79.png" alt="Alt text"><br>属性2：<br><img src="../../../../images/decisiontreeImg/80.png" alt="Alt text">  </li>
 </ul>
 <p>由于<code>Info1 &gt; Info2</code>，所以属性1与属性2相比是更优的分裂属性，故选择属性1作为分裂属性。  </p>
 <h3 id="（2）信息增益率"><a href="#（2）信息增益率" class="headerlink" title="（2）信息增益率"></a>（2）信息增益率</h3><p>使用信息增益作为选择分裂的条件有一个不可避免的缺点：倾向选择分支比较多的属性进行分裂。为了解决这个问题，引入了信息增益率这个概念。信息增益率是在信息增益的基础上除以分裂节点数据量的信息增益，其计算公式如下：<br><img src="../../../../images/decisiontreeImg/20.PNG" alt="Alt text"><br>其中Info_Gain表示信息增益，InstrinsicInfo表示分裂子节点数据量的信息增益，其计算公式为：<br><img src="../../../../images/decisiontreeImg/21.PNG" alt="Alt text"><br>其中m表示子节点的数量，ni表示第i个子节点的数量，N表示父节点数据量，说白了，其实InstrinsicInfo是分裂节点的熵，如果节点的数据链月接近，InstrinsicInfo越大，如果子节点越大，InstrinsicInfo越大，而Info_Ratio就会越小，能够降低节点分裂时选择子节点多的分裂属性的倾向性。信息增益率越高，说明分裂效果越好。<br>例：<br><img src="../../../../images/decisiontreeImg/22.PNG" alt="Alt text"><br>属性1的信息增益率:<br><img src="../../../../images/decisiontreeImg/23.PNG" alt="Alt text"><br>属性2的信息增益率：<br><img src="../../../../images/decisiontreeImg/24.PNG" alt="Alt text"><br>由于<code>Info_Ratio2 &gt; Info_Ratio1</code>，故选择属性2作为分裂的属性。  </p>
