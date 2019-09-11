@@ -6,15 +6,97 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://yokiyang.github.io">
-  <title>Yoki的读书笔记</title>
+  <title>线性代数 | Yoki的读书笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Yoki的读书笔记">
-<meta property="og:url" content="https://yokiyang.github.io/index.html">
+  <meta name="description" content="一. 标量，向量，矩阵和张量1. 标量（scalar）一个标量就是一个单独的数，也可以视为 0 阶张量。符号 x∈ℝ 表示 x 是一个标量，属于一组实数值 ℝ。标量通常被赋予小写的变量名称，比如：x。以下是深度学习中不同数集的表示。ℕ 表示正整数集合 (1,2,3,…)。ℤ 表示结合了正值，负值和零值的整数集合。ℚ 表示有理数集合。">
+<meta name="keywords" content="Python,机器学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性代数">
+<meta property="og:url" content="https://yokiyang.github.io/2019/09/11/linear_algebra/index.html">
 <meta property="og:site_name" content="Yoki的读书笔记">
+<meta property="og:description" content="一. 标量，向量，矩阵和张量1. 标量（scalar）一个标量就是一个单独的数，也可以视为 0 阶张量。符号 x∈ℝ 表示 x 是一个标量，属于一组实数值 ℝ。标量通常被赋予小写的变量名称，比如：x。以下是深度学习中不同数集的表示。ℕ 表示正整数集合 (1,2,3,…)。ℤ 表示结合了正值，负值和零值的整数集合。ℚ 表示有理数集合。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/21.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/22.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/28.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/29.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/30.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/23.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/24.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/25.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/26.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/27.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/31.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/32.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/88.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/48.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/46.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/34.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/35.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/36.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/37.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/38.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/39.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/40.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/41.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/42.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/43.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/44.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/33.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/33.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/45.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/47.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/47.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/60.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/61.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/62.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/63.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/64.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/65.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/66.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/67.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/68.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/75.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/49.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/50.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/51.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/52.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/53.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/54.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/55.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/69.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/70.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/71.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/72.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/73.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/74.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/56.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/57.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/58.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/59.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/76.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/77.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/78.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/78.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/77.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/77.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/78.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/77.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/78.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/79.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/80.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/81.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/82.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/83.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/84.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/85.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/86.png">
+<meta property="og:image" content="https://yokiyang.github.io/images/machineImg/87.png">
+<meta property="og:updated_time" content="2019-09-11T08:14:46.388Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yoki的读书笔记">
+<meta name="twitter:title" content="线性代数">
+<meta name="twitter:description" content="一. 标量，向量，矩阵和张量1. 标量（scalar）一个标量就是一个单独的数，也可以视为 0 阶张量。符号 x∈ℝ 表示 x 是一个标量，属于一组实数值 ℝ。标量通常被赋予小写的变量名称，比如：x。以下是深度学习中不同数集的表示。ℕ 表示正整数集合 (1,2,3,…)。ℤ 表示结合了正值，负值和零值的整数集合。ℚ 表示有理数集合。">
+<meta name="twitter:image" content="https://yokiyang.github.io/images/machineImg/21.png">
   
     <link rel="alternative" href="/atom.xml" title="Yoki的读书笔记" type="application/atom+xml">
   
@@ -154,16 +236,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-linear_algebra" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-linear_algebra" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/11/linear_algebra/">线性代数</a>
+    <h1 class="article-title" itemprop="name">
+      线性代数
     </h1>
   
 
@@ -177,9 +257,97 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="一-标量，向量，矩阵和张量"><a href="#一-标量，向量，矩阵和张量" class="headerlink" title="一. 标量，向量，矩阵和张量"></a>一. 标量，向量，矩阵和张量</h2><h3 id="1-标量（scalar）"><a href="#1-标量（scalar）" class="headerlink" title="1. 标量（scalar）"></a>1. 标量（scalar）</h3><p>一个标量就是一个单独的数，也可以视为 0 阶张量。符号 x∈ℝ 表示 x 是一个标量，属于一组实数值 ℝ。标量通常被赋予小写的变量名称，比如：x。<br>以下是深度学习中不同数集的表示。ℕ 表示正整数集合 (1,2,3,…)。ℤ 表示结合了正值，负值和零值的整数集合。ℚ 表示有理数集合。</p>
-        
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 内置标量</span></span><br><span class="line">a = <span class="number">5</span></span><br><span class="line">b = <span class="number">7.5</span></span><br><span class="line">print(type(a))</span><br><span class="line">print(type(b))</span><br><span class="line">print(a + b)</span><br><span class="line">print(a - b)</span><br><span class="line">print(a * b)</span><br><span class="line">print(a / b)</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># 判断是否为标量的函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isscalar</span><span class="params">(num)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> isinstance(num, generic):</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">print(np.isscalar(<span class="number">3.1</span>))</span><br><span class="line">print(np.isscalar([<span class="number">3.1</span>]))</span><br><span class="line">print(np.isscalar(<span class="literal">False</span>))</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-向量（vector）"><a href="#2-向量（vector）" class="headerlink" title="2. 向量（vector）"></a>2. 向量（vector）</h3><p>向量是标量的有序数组，是一阶张量的例子。向量是被称为矢量空间的对象的片段。向量空间可以被认为是特定长度（或维度）的所有可能向量的整个集合。用 ℝ^3 表示的三维实值向量空间，通常用于从数学角度表示我们对三维空间的现实世界概念。<br>为了明确地定位到矢量的某个分量，矢量的第 i 个标量元素被写为 x[i]。<br><img src="../../../../images/machineImg/21.png" alt="Alt text">  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># 定义向量</span></span><br><span class="line">x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">y = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">print(type(x))</span><br><span class="line"><span class="comment"># 这样做不会得到向量和</span></span><br><span class="line">print(x + y)</span><br><span class="line"><span class="comment"># 使用 Numpy 进行向量相加</span></span><br><span class="line">z = np.add(x, y)</span><br><span class="line">print(z)</span><br><span class="line">print(type(z))</span><br><span class="line"><span class="comment"># 向量叉乘</span></span><br><span class="line">mul = np.cross(x, y)</span><br><span class="line">print(mul)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-矩阵（matrix）"><a href="#3-矩阵（matrix）" class="headerlink" title="3. 矩阵（matrix）"></a>3. 矩阵（matrix）</h3><p>矩阵是由数字组成的矩形阵列，是 2 阶张量的一个例子。如果 m 和 n 是正整数，即 m，n∈ℕ，则 m<em>n 矩阵包含 m</em>n 个数字，m 行 n 列。完整的 m*n 矩阵可写为：<br><img src="../../../../images/machineImg/22.png" alt="Alt text">  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">m = np.mat([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line">print(m)</span><br><span class="line">m = np.mat(np.zeros((<span class="number">3</span>,<span class="number">2</span>)))</span><br><span class="line">print(m)</span><br><span class="line">m = np.mat(np.eye(<span class="number">3</span>,<span class="number">3</span>,dtype=int))</span><br><span class="line">print(m）</span><br><span class="line">x = np.matrix([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">2</span>,<span class="number">3</span>]])</span><br><span class="line">a = x.mean(<span class="number">0</span>)</span><br><span class="line"><span class="comment"># 对矩阵求均值。（其中 axis 不设置值，对 m*n 个数求均值，返回一个实数；axis = 0：压缩行，对各列求均值，返回 1* n 矩阵；axis =1 ：压缩列，对各行求均值，返回 m *1 矩阵）。</span></span><br><span class="line">z = x.mean(<span class="number">1</span>)</span><br><span class="line">z.shape</span><br><span class="line">y = x - z</span><br><span class="line">print(type(z))</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-张量（tensor）"><a href="#4-张量（tensor）" class="headerlink" title="4. 张量（tensor）"></a>4. 张量（tensor）</h3><p>在某种情况下，我们会讨论坐标超过两维的数组。一般的，一个数组中的元素分布在若干维坐标的规则网格中，我们称之为张量,使用A表示，张量A中坐标为(x,y,z)的元素记作Ax,y,z<br>我们使用像 TensorFlow 或 PyTorch 这样的 Python 库来声明张量，而不是使用嵌套矩阵来表示。  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">a = torch.Tensor([<span class="number">26</span>])</span><br><span class="line">print(type(a))</span><br><span class="line">print(a.shape)</span><br><span class="line">t = torch.Tensor(<span class="number">5</span>, <span class="number">3</span>)</span><br><span class="line">print(t)</span><br><span class="line"></span><br><span class="line">p = torch.Tensor(<span class="number">4</span>,<span class="number">4</span>)</span><br><span class="line">q = torch.Tensor(<span class="number">4</span>,<span class="number">4</span>)</span><br><span class="line">ones = torch.ones(<span class="number">4</span>,<span class="number">4</span>)</span><br><span class="line">print(p, q, ones)</span><br><span class="line">print(<span class="string">"Addition:&#123;&#125;"</span>.format(p + q))</span><br><span class="line">print(<span class="string">"Subtraction:&#123;&#125;"</span>.format(p - ones))</span><br><span class="line">print(<span class="string">"Multiplication:&#123;&#125;"</span>.format(p * ones))</span><br><span class="line">print(<span class="string">"Division:&#123;&#125;"</span>.format(q / ones))</span><br></pre></td></tr></table></figure>
+
+<h2 id="二-矩阵的运算"><a href="#二-矩阵的运算" class="headerlink" title="二. 矩阵的运算"></a>二. 矩阵的运算</h2><h3 id="1-矩阵转置"><a href="#1-矩阵转置" class="headerlink" title="1. 矩阵转置"></a>1. 矩阵转置</h3><p>转置（transpose）是矩阵的重要操作之一。矩阵的转置是以对角线为轴的镜像，这条从左上角到右下角的对角线被称为主对角线（main diagonal），我们将矩阵A的转置表示为A的右上角一个T，定义如下：<br><img src="../../../../images/machineImg/28.png" alt="Alt text"><br>标量可以看作只有一个元素的矩阵。因此，标量的转置等于它本身<br><img src="../../../../images/machineImg/29.png" alt="Alt text"><br>矩阵的转置也是一种运算，满足下述运算规律（假设运算都可行的):<br><img src="../../../../images/machineImg/30.png" alt="Alt text">   </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">m = np.mat([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line"><span class="keyword">print</span> <span class="string">'转置前:\n%s'</span> % m</span><br><span class="line">t = m.T</span><br><span class="line"><span class="keyword">print</span> <span class="string">'转置前:\n%s'</span> % t</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-矩阵的加法"><a href="#2-矩阵的加法" class="headerlink" title="2. 矩阵的加法"></a>2. 矩阵的加法</h3><h4 id="2-1-矩阵加法"><a href="#2-1-矩阵加法" class="headerlink" title="2.1 矩阵加法"></a>2.1 矩阵加法</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x = np.matrix([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">4</span>, <span class="number">3</span>]])</span><br><span class="line">sum = x.sum()</span><br><span class="line">print(sum)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-矩阵与矩阵相加"><a href="#2-2-矩阵与矩阵相加" class="headerlink" title="2.2 矩阵与矩阵相加"></a>2.2 矩阵与矩阵相加</h4><p>设有两个m<em>n矩阵A=(ai,j)和B=(bi,j),那么矩阵A与B的和记作A+B,规定为:<br><img src="../../../../images/machineImg/23.png" alt="Alt text"><br>*</em>注：两个矩阵必须是同型的矩阵时，这两个矩阵才能进行加法运算**  </p>
+<blockquote>
+<p>矩阵加法满足下列运算规律（设A,B,C都是m*n矩阵）：<br>1.A + B = B + A<br>2.(A + B) + C = A + (B + C)</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">m1 = np.mat([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]])</span><br><span class="line">m2 = np.mat([[<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>], [<span class="number">14</span>, <span class="number">15</span>, <span class="number">16</span>]])</span><br><span class="line"><span class="keyword">print</span> <span class="string">"m1 + m2 = \n%s "</span> % (m1 + m2)</span><br><span class="line"></span><br><span class="line">m_sum = np.add(x, y)</span><br><span class="line">print(m_sum)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-3-矩阵与标量相加"><a href="#2-3-矩阵与标量相加" class="headerlink" title="2.3 矩阵与标量相加"></a>2.3 矩阵与标量相加</h4><p>将给定的标量添加到给定矩阵中的所有元素。  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x = np.matrix([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">4</span>, <span class="number">3</span>]])</span><br><span class="line">s_sum = x + <span class="number">1</span></span><br><span class="line">print(s_sum)</span><br></pre></td></tr></table></figure>
+
+<p>在深度学习中，我们也使用一些不那么常规的符号。我们允许矩阵和向量相加，产生另一个矩阵：C=A+a，其中Ci,j=Ai,j+aj。换言之，向量a和矩阵A的每一行相加。这个简写方法使我们无需在加法操作前定义一个将向量a复制到每一行而生成的矩阵。这种隐式地复制向量a到很多位置的方式，称之为广播（broadcasting）</p>
+<h3 id="3-矩阵的乘法"><a href="#3-矩阵的乘法" class="headerlink" title="3. 矩阵的乘法"></a>3. 矩阵的乘法</h3><h4 id="3-1-矩阵与标量的乘法"><a href="#3-1-矩阵与标量的乘法" class="headerlink" title="3.1 矩阵与标量的乘法"></a>3.1 矩阵与标量的乘法</h4><p>标量λ与矩阵A的乘积记作λA或Aλ,规定为:<br><img src="../../../../images/machineImg/24.png" alt="Alt text"><br>标量和矩阵相乘满足下列运算规律（设A,B为m*n矩阵，λ，μ为标量）：<br>1.(λμ)A = λ(μA)<br>2.(λ+μ)A = λA + μA<br>3.λ(A + B) = λA + λB     </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x = np.matrix([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">4</span>, <span class="number">3</span>]])</span><br><span class="line">s_mul = x * <span class="number">3</span></span><br><span class="line">print(s_mul)</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-矩阵与矩阵的乘法"><a href="#3-2-矩阵与矩阵的乘法" class="headerlink" title="3.2 矩阵与矩阵的乘法"></a>3.2 矩阵与矩阵的乘法</h4><p>设A=(ai,j)是一个m<em>s矩阵,B=(bi,j)是一个s</em>n矩阵,那么规定矩阵A与B的乘积是一个m*n矩阵C=(ci,j),记作: C = AB。<br>计算如下：<br><img src="../../../../images/machineImg/25.png" alt="Alt text"><br>例如：<br><img src="../../../../images/machineImg/26.png" alt="Alt text"><br><img src="../../../../images/machineImg/27.png" alt="Alt text"><br>矩阵乘矩阵不满足交换律，但在运算都可行的情况下满足结合律和分配律<br>1.(AB)C = A(BC)<br>2.λ(AB) = (λA)B = A(λB)(其中λ为数)<br>3.A(B + C) = AB + AC, (B + C)A = BA + CA</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">m1 = np.mat([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]])</span><br><span class="line">m2 = np.mat([[<span class="number">11</span>, <span class="number">12</span>], [<span class="number">13</span>, <span class="number">14</span>], [<span class="number">15</span>, <span class="number">16</span>]])</span><br><span class="line"><span class="keyword">print</span> <span class="string">"m1 * m2 = \n%s "</span> % (m1 * m2)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = [[<span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">1</span>]]</span><br><span class="line">b = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">np.matmul(a, b)</span><br><span class="line"></span><br><span class="line">complex_mul = np.matmul([<span class="number">2j</span>, <span class="number">3j</span>], [<span class="number">2j</span>, <span class="number">3j</span>])</span><br><span class="line">print(complex_mul)</span><br></pre></td></tr></table></figure>
+
+<h2 id="三-单位矩阵和逆矩阵"><a href="#三-单位矩阵和逆矩阵" class="headerlink" title="三. 单位矩阵和逆矩阵"></a>三. 单位矩阵和逆矩阵</h2><p>单位矩阵(identity matrix)就是对角线的元素都是1，而其他的所有元素都是0，如下:<br><img src="../../../../images/machineImg/31.png" alt="Alt text"><br>逆矩阵(matrix inversion)定义：对应n阶矩阵A，如果有一个n阶矩阵，使得：<br>AB = BA = I<br>则说明矩阵A时可逆的，并把矩阵B称为A的逆矩阵。而且矩阵是唯一的，记作A的右上角-1。<br>当|A| 不等于0，则矩阵A可逆，且<br><img src="../../../../images/machineImg/32.png" alt="Alt text"><br>其中A*称为矩阵A的伴随矩阵<br><img src="../../../../images/machineImg/88.png" alt="Alt text">   </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">m = np.mat(eye(<span class="number">3</span>,<span class="number">3</span>,dtype=int))</span><br><span class="line"><span class="keyword">print</span> m</span><br><span class="line"><span class="comment"># 计算3*3矩阵的逆矩阵</span></span><br><span class="line">m = np.mat([[<span class="number">2</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">4</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">8</span>]])</span><br><span class="line">I = m.I</span><br><span class="line"><span class="keyword">print</span> <span class="string">'矩阵：\n%s\n的逆矩阵为：\n%s'</span> % (m, I)</span><br><span class="line"><span class="comment"># 计算3*3方阵的行列式</span></span><br><span class="line">m = np.mat([[<span class="number">2</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">4</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">8</span>]])</span><br><span class="line">d = np.linalg.det(m)</span><br><span class="line"><span class="keyword">print</span> d</span><br><span class="line"><span class="comment"># 计算3*3方阵的伴随矩阵</span></span><br><span class="line">m = np.mat([[<span class="number">2</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">4</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">8</span>]])</span><br><span class="line">i = m.I</span><br><span class="line">d = np.linalg.det(m)</span><br><span class="line">a = i * d</span><br><span class="line"><span class="keyword">print</span> a</span><br></pre></td></tr></table></figure>
+
+<h2 id="四-范数"><a href="#四-范数" class="headerlink" title="四. 范数"></a>四. 范数</h2><h3 id="1-什么是范数？"><a href="#1-什么是范数？" class="headerlink" title="1. 什么是范数？"></a>1. 什么是范数？</h3><p>我们知道距离的定义是一个宽泛的概念，只要满足非负、自反、三角不等式就可以称之为距离。范数是一种强化了的距离概念，它在定义上比距离多了一条数乘的运算法则。有时候为了便于理解，我们可以把范数当作距离来理解。  </p>
+<ul>
+<li>范数需要满足的条件<br><img src="../../../../images/machineImg/48.png" alt="Alt text">  </li>
+</ul>
+<h3 id="2-几类范数的定义"><a href="#2-几类范数的定义" class="headerlink" title="2. 几类范数的定义"></a>2. 几类范数的定义</h3><p><img src="../../../../images/machineImg/46.png" alt="Alt text"><br>在数学上，范数包括向量范数和矩阵范数，向量范数表征向量空间中向量的大小，矩阵范数表征矩阵引起变化的大小。一种非严密的解释就是，对应向量范数，向量空间中的向量都是有大小的，这个大小如何度量，就是用范数来度量的，不同的范数都可以来度量这个大小，就好比米和尺都可以来度量远近一样；对于矩阵范数，学过线性代数，我们知道，通过运算AX=B，可以将向量X变化为B，矩阵范数就是来度量这个变化大小的。  </p>
+<h4 id="2-1-L-P范数"><a href="#2-1-L-P范数" class="headerlink" title="2.1 L-P范数"></a>2.1 L-P范数</h4><p>L-P范数不是一个范数，而是一组范数，其定义如下：<br><img src="../../../../images/machineImg/34.png" alt="Alt text"><br>根据P 的变化，范数也有着不同的变化，一个经典的有关P范数的变化图如下：<br>下图表示了p从无穷到0变化时，三维空间中到原点的距离（范数）为1的点构成的图形的变化情况。以常见的L-2范数（p=2）为例，此时的范数也即欧氏距离，空间中到原点的欧氏距离为1的点构成了一个球面。<br><img src="../../../../images/machineImg/35.png" alt="Alt text"></p>
+<h4 id="2-2-L0范数"><a href="#2-2-L0范数" class="headerlink" title="2.2 L0范数"></a>2.2 L0范数</h4><p>当P=0时，也就是L0范数，由上面可知，L0范数并不是一个真正的范数，它主要被用来度量向量中非零元素的个数。用上面的L-P定义可以得到的L-0的定义为：<br><img src="../../../../images/machineImg/36.png" alt="Alt text"><br>这里就有点问题了，我们知道非零元素的零次方为1，但零的零次方，非零数开零次方都是什么鬼，很不好说明L0的意义，所以在通常情况下，大家都用的是：<br><img src="../../../../images/machineImg/37.png" alt="Alt text">表示向量x中非零元素的个数。<br>对于L0范数，其优化问题为：<br><img src="../../../../images/machineImg/38.png" alt="Alt text"><br>在实际应用中，由于L0范数本身不容易有一个好的数学表示形式，给出上面问题的形式化表示是一个很难的问题，故被人认为是一个NP难问题。所以在实际情况中，L0的最优问题会被放宽到L1或L2下的最优化。  </p>
+<h4 id="2-3-L1范数"><a href="#2-3-L1范数" class="headerlink" title="2.3 L1范数"></a>2.3 L1范数</h4><p>L1范数是我们经常见到的一种范数，它的定义如下：<br><img src="../../../../images/machineImg/39.png" alt="Alt text"><br>表示向量x中非零元素的绝对值之和。<br>L1范数有很多的名字，例如我们熟悉的曼哈顿距离、最小绝对误差等。使用L1范数可以度量两个向量间的差异，如绝对误差和（Sum of Absolute Difference）：<br><img src="../../../../images/machineImg/40.png" alt="Alt text"><br>对于L1范数，它的优化问题如下：<br><img src="../../../../images/machineImg/41.png" alt="Alt text"><br>由于L1范数的天然性质，对L1优化的解是一个稀疏解，因此L1范数也被叫做稀疏规则算子。通过L1可以实现特征的稀疏，去掉一些没有信息的特征，例如在对用户的电影爱好做分类的时候，用户有100个特征，可能只有十几个特征是对分类有用的，大部分特征如身高体重等可能都是无用的，利用L1范数就可以过滤掉。</p>
+<h4 id="2-4-L2范数"><a href="#2-4-L2范数" class="headerlink" title="2.4 L2范数"></a>2.4 L2范数</h4><p>L2范数是我们最常见最常用的范数了，我们用的最多的度量距离欧氏距离就是一种L2范数，它的定义如下：<br><img src="../../../../images/machineImg/42.png" alt="Alt text"><br>表示向量元素的平方和再开平方。<br>像L1范数一样，L2也可以度量两个向量间的差异，如平方差和（Sum of Squared Difference）:<br><img src="../../../../images/machineImg/43.png" alt="Alt text"><br>对于L2范数，它的优化问题如下：<br><img src="../../../../images/machineImg/44.png" alt="Alt text"><br>L2范数通常会被用来做优化目标函数的正则化项，防止模型为了迎合训练集而过于复杂造成过拟合的情况，从而提高模型的泛化能力。  </p>
+<h4 id="2-5-范数"><a href="#2-5-范数" class="headerlink" title="2.5 范数"></a>2.5 <img src="../../../../images/machineImg/33.png" alt="Alt text">范数</h4><p>当P=0时，也就是<img src="../../../../images/machineImg/33.png" alt="Alt text">范数，它主要被用来度量向量元素的最大值，与L0一样，通常情况下表示为:<br><img src="../../../../images/machineImg/45.png" alt="Alt text"></p>
+<h2 id="五-线性相关和生成子空间"><a href="#五-线性相关和生成子空间" class="headerlink" title="五. 线性相关和生成子空间"></a>五. 线性相关和生成子空间</h2><h3 id="1-什么是线性相关"><a href="#1-什么是线性相关" class="headerlink" title="1. 什么是线性相关"></a>1. 什么是线性相关</h3><p>在向量空间V的一组向量A:α1, α2, ···,αm ,如果存在不全为零的数 k1, k2, ···,km , 使<br><img src="../../../../images/machineImg/47.png" alt="Alt text"><br>则称向量组A是线性相关的，否则数k1, k2, ···,km全为0时，称它是线性无关。<br>由此定义看出 α1, α2, ···,αm 是否线性相关，就看是否存在一组不全为零的数 k1, k2, ···,km使得上式成立。<br>即是看<img src="../../../../images/machineImg/47.png" alt="Alt text">这个齐次线性方程组是否存在非零解，将其系数矩阵化为最简形矩阵，即可求解。  </p>
+<p>如果矩阵A的逆存在，那么对于上面化为矩阵的线性方程组Ax=b对于每一个向量b恰好存在一个解。对系统方程而言，对于某些b的值，有可能不存在解，或者存在无限多个解。然而，存在多于一个解但是少于无限多个解的情况是不可能发生的；因为如果x和y都是某系统方程的解，则z=αx+(1-α)也是该系统方程的解。<br>分析方程有多少个解，我们可以将A的列向量看作是从原点出发的不同方向，确定有多少种方法可以到达向量b。在这个观点中，向量x中的每个元素表示我们应该沿着这些方向走多远，即xi表示我们需要沿着第i个向量的方向走多远。一般而言，这种操作被称为线性组合。  </p>
+<h3 id="2-什么是生成子空间？"><a href="#2-什么是生成子空间？" class="headerlink" title="2. 什么是生成子空间？"></a>2. 什么是生成子空间？</h3><p>一组向量的<strong>生成子空间</strong>是原始向量线性组合后所能抵达的点的集合。 </p>
+<p>确定Ax=b是否有解相当于确定向量b是否在A列向量的生成子空间中。这个特殊的生成子空间被称为A的列空间或者A的值域。<br>为了让方程Ax=b对于任意的向量b在m维实数空间中都有解的话，我们要求A的列空间构成整个m维实数空间。如果m维实数空间中的某个点不在A的列空间中，那么该点对应的b会使得该方程没有解。矩阵A的列空间是整个m维实数空间的要求，意味着A至少有m列，即n&gt;=m。否则，A列空间的维数会小于m。例如，假设A是一个3×2的矩阵。目标b是3维的。但是x只有2维。所以无论如何修改x的值，也只能描绘出R3空间中的二维平面。当且仅当向量b在该二维平面中时，该方程有解。<br>不等式n&gt;=m仅是方程对每一点都有解的必要条件。不是一个充分条件，因为有些列向量可能是冗余的。加上有一个R2×2中的矩阵，它的两个列向量是相同的。那么它的列空间和它的一个列向量作为矩阵的列空间是一样的。换言之，虽然该矩阵有2列，但是它的列空间仍然只是一条线，不能涵盖整个R2空间。<br>这种冗余被称为线性相关。如果一组向量中的任意一个向量都不能表示成其他向量的线性组合，那么这组向量被称为线性无关。如果某个向量是一组向量中某些向量的线性组合，那么我们将这个向量加入到这组向量后不会增加这组向量的生成子空间。这意味着，如果一个矩阵的列空间涵盖整个Rm，那么该矩阵必须包含至少一组m个线性无关的向量。这是对Ax=b对于每一个向量b的取值都有解的充分必要条件。<br>要想使矩阵可逆，我们还需要保证Ax=b对于每一个b值至多有一个解。为此，我们需要确保该矩阵至多有m个列向量。否则，该方程会有不止一个解。<br>所以，该矩阵必须是一个方阵，即m=n，并且所有列向量都是线性无关的。一个列向量线性相关的方阵被称为<strong>奇异的</strong>。  </p>
+<h2 id="六-特征分解"><a href="#六-特征分解" class="headerlink" title="六. 特征分解"></a>六. 特征分解</h2><h3 id="1-如何求解矩阵的特征值和特征向量？"><a href="#1-如何求解矩阵的特征值和特征向量？" class="headerlink" title="1. 如何求解矩阵的特征值和特征向量？"></a>1. 如何求解矩阵的特征值和特征向量？</h3><p><img src="../../../../images/machineImg/60.png" alt="Alt text">  </p>
+<h3 id="2-关于矩阵的特征向量和特征值的含义"><a href="#2-关于矩阵的特征向量和特征值的含义" class="headerlink" title="2. 关于矩阵的特征向量和特征值的含义"></a>2. 关于矩阵的特征向量和特征值的含义</h3><p>我们可以把矩阵看作是运动，对于运动而言，最重要的是运动的速度和方向，那么1.特征值就是运动的速度2.特征向量就是运动的方向  </p>
+<h4 id="几何意义"><a href="#几何意义" class="headerlink" title="几何意义"></a>几何意义</h4><p>因为线性变换总是在各种基之间变来变去，所以我们下面画图都会把作图所用的基和原点给画出来。<br><img src="../../../../images/machineImg/61.png" alt="Alt text"><br>随便左乘一个矩阵A，图像看上去没什么特殊的<br><img src="../../../../images/machineImg/62.png" alt="Alt text"><br><img src="../../../../images/machineImg/63.png" alt="Alt text"><br><img src="../../../../images/machineImg/64.png" alt="Alt text"><br><img src="../../../../images/machineImg/65.png" alt="Alt text"><br><img src="../../../../images/machineImg/66.png" alt="Alt text"><br><img src="../../../../images/machineImg/67.png" alt="Alt text"><br><img src="../../../../images/machineImg/68.png" alt="Alt text"><br>例：<br><img src="../../../../images/machineImg/75.png" alt="Alt text">  </p>
+<p>特征分解是使用最广的矩阵分解之一，即我们将矩阵分解成一组特征向量和特征值。<br>方阵A的特征向量是指与A相乘后相当于对该向量进行放缩的非零向量v：Av=λv。标量λ被称为这个特征向量对应的特征值。<br>如果v是A的特征向量，那么任何放缩后的向量sv（s为实数，s≠0）也是A的特征向量。此外，sv和v有相同的特征值。基于这个原因，通常我们只考虑单位特征向量。<br>假设矩阵A有n个线性无关的特征向量<img src="../../../../images/machineImg/49.png" alt="Alt text">，对应着特征值<img src="../../../../images/machineImg/50.png" alt="Alt text">。我们将特征向量连接一个矩阵，使得每一列是一个特征向量：<img src="../../../../images/machineImg/51.png" alt="Alt text">。类似地，我们也可以将特征值连接成一个向量<img src="../../../../images/machineImg/52.png" alt="Alt text">。因此A的特征分解可以记作<br><img src="../../../../images/machineImg/53.png" alt="Alt text"><br>我们已经看到了构建具有特定特征值和特征向量的矩阵，能够使我们在目标方向上延伸空间。然而，我们也常常希望将矩阵分解成特征值和特征向量。这样可以帮助我们分析矩阵的特定性质，就像质因数分解有助于我们理解整数。<br>不是每一个矩阵都可以分解成特征值和特征向量。在某些情况下，特征分解会涉及到复数，而非实数。具体地，每个实对称矩阵都可以分解成实特征向量和实特征值：<br><img src="../../../../images/machineImg/54.png" alt="Alt text"><br>其中Q是A的特征向量组成的正交矩阵，λ是对角矩阵。特征值λi,i对应的特征向量是矩阵Q的第i列，记作Q:,i。因为Q是正交矩阵，我们可以将A看作是沿方向v(i)延展λi倍的空间。<br><img src="../../../../images/machineImg/55.png" alt="Alt text"><br>例：<br><img src="../../../../images/machineImg/69.png" alt="Alt text"><br><img src="../../../../images/machineImg/70.png" alt="Alt text"><br>几何上的表现：<br><img src="../../../../images/machineImg/71.png" alt="Alt text"><br><img src="../../../../images/machineImg/72.png" alt="Alt text"><br><img src="../../../../images/machineImg/73.png" alt="Alt text"><br><img src="../../../../images/machineImg/74.png" alt="Alt text"><br>所以总结一下：特征值就是拉伸的大小；特征向量就是矩阵的运动方向。<br>虽然任意一个实对称矩阵A都有特征分解，但是特征分解可能并不唯一。如果两个或多个特征向量拥有相同的特征值，那么这组特征向量生成子空间中，任意一组正交向量都是该特征值对应的特征向量。因此，我们可以使用任意一组正交向量作为Q的特征向量。按照惯例，我们通常按降序排列λ的条目。在该约定下，特征分解唯一当且仅当多有的特征值都是唯一的。<br>矩阵的特征分解给了我们很多关于矩阵的有用信息。矩阵是奇异的当且仅当含有零特征值。实对称矩阵的特征分解也可以用于优化二次方程<br><img src="../../../../images/machineImg/56.png" alt="Alt text">，其中限制<img src="../../../../images/machineImg/57.png" alt="Alt text">.当x等于A的某个特征向量时，f将返回对应的特征值。在限制条件下，函数f的最大值是最大特征值，最小值是最小特征值。<br>所有特征值都是正数的矩阵被称为正定，所有特征值都是非负数的矩阵被称为半正定。同样地，所有特征值都是负数的矩阵被称为负定，所有特征值都是非正数的矩阵被称为半负定。半正定矩阵受到关注是因为它们保证<img src="../../../../images/machineImg/58.png" alt="Alt text">。此外，正定矩阵还保证<img src="../../../../images/machineImg/59.png" alt="Alt text">  </p>
+<h2 id="七-奇异值分解"><a href="#七-奇异值分解" class="headerlink" title="七. 奇异值分解"></a>七. 奇异值分解</h2><p>上面探讨了如何将矩阵分解成特征向量和特征值。还有另一种分解矩阵的方法，被称为奇异值分解，将矩阵分解为奇异向量和奇异值。通过奇异值分解，我们得到一些类似特征分解的信息。然而，奇异值分解有更广泛的应用。每个实数矩阵都有一个奇异值分解，但不一定都有特征分解。例如，非方阵的矩阵没有特征分解，这时我们只能使用奇异值分解。奇异值分解和特征分解是类似的，只不过这回我们将矩阵A分解成三个矩阵的乘积：<img src="../../../../images/machineImg/76.png" alt="Alt text"><br>假设A是一个m×n的矩阵，那么U是一个m×m的矩阵，D是一个m×n的矩阵，V是一个n×n矩阵。<br>这些矩阵每一个都拥有特殊的结构。矩阵U和V都是正交矩阵，矩阵D是对角矩阵。注意，矩阵D不一定是方阵。<br>对角矩阵D对角线上的元素被称为矩阵A的奇异值。矩阵U的列向量被称为左奇异向量，矩阵V的列向量被称为右奇异向量。<br>事实上，我们可以用与A相关的特征分解去解释A的奇异值分解。A的左奇异向量是<img src="../../../../images/machineImg/77.png" alt="Alt text">的特征向量。A的右奇异向量是<img src="../../../../images/machineImg/78.png" alt="Alt text">的特征向量。A的非零奇异值是<img src="../../../../images/machineImg/78.png" alt="Alt text">特征值的平方根，同时也是<img src="../../../../images/machineImg/77.png" alt="Alt text">特征值的平方根  </p>
+<h3 id="如何求解矩阵U-V-D？"><a href="#如何求解矩阵U-V-D？" class="headerlink" title="如何求解矩阵U,V,D？"></a>如何求解矩阵U,V,D？</h3><p>求解这3个矩阵的过程就是求解特征值和特征向量的过程，问题在于求谁的特征值和特征向量。  </p>
+<ul>
+<li>U的列由<img src="../../../../images/machineImg/77.png" alt="Alt text">的单位化过的特征向量构成</li>
+<li>V的列由<img src="../../../../images/machineImg/78.png" alt="Alt text">的单位化过的特征向量构成</li>
+<li>D的对角元素来源于<img src="../../../../images/machineImg/77.png" alt="Alt text">或<img src="../../../../images/machineImg/78.png" alt="Alt text">的特征值的平方根，并且是按从大到小的顺序排列的  </li>
+</ul>
+<p>例：<br><img src="../../../../images/machineImg/79.png" alt="Alt text">  </p>
+<h3 id="用Python中的Numpy实现"><a href="#用Python中的Numpy实现" class="headerlink" title="用Python中的Numpy实现"></a>用Python中的Numpy实现</h3><p>Python中可以使用numpy包的linalg.svd()来求解SVD。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">A=np.array([[<span class="number">2</span>, <span class="number">4</span>], [<span class="number">1</span>, <span class="number">3</span>], [<span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>]])</span><br><span class="line">print(np.linalg.svd(A))</span><br></pre></td></tr></table></figure>
+
+<h2 id="八-Moore-Penrose伪逆"><a href="#八-Moore-Penrose伪逆" class="headerlink" title="八. Moore-Penrose伪逆"></a>八. Moore-Penrose伪逆</h2><p>对于非方矩阵而言，其逆矩阵没有定义。假设在下面的问题中，我们希望通过矩阵A的左逆B来求解线性方程，Ax=y等式两边左乘左逆B后，我们得到x=By。是否存在一个唯一的映射，将A映射到B,取决于问题的形式。<br>如果矩阵A的行数大于列数，那么上述方程可能没有解。如果矩阵A的行数小于列数，那么上述矩阵可能有多个解。<br>Moore-Penrose伪逆使我们能够解决这类问题。矩阵A的伪逆定义为：<br><img src="../../../../images/machineImg/80.png" alt="Alt text"><br>计算伪逆的实际算法没有基于这个式子而是使用下面的公式：<br><img src="../../../../images/machineImg/81.png" alt="Alt text"><br>其中，矩阵U,D和V是矩阵A奇异值分解后得到的矩阵，对角矩阵D的伪逆D+使其非零元素取倒数之后再转置得到的。<br>当矩阵A的列数多于行数时，使用伪逆求解线性方程式众多可能解法中的一种，具体的，<img src="../../../../images/machineImg/82.png" alt="Alt text">是方程所有可行解中欧几里得范数最小的一个。<br>当矩阵A的行数多于列数时，可能没有解。在这种情况下，通过伪逆得到的x是使得Ax和y的欧几里得距离<img src="../../../../images/machineImg/83.png" alt="Alt text">最小的解</p>
+<h2 id="九-附：行列式的运算例子"><a href="#九-附：行列式的运算例子" class="headerlink" title="九. 附：行列式的运算例子"></a>九. 附：行列式的运算例子</h2><p><img src="../../../../images/machineImg/84.png" alt="Alt text"><br><img src="../../../../images/machineImg/85.png" alt="Alt text"><br><img src="../../../../images/machineImg/86.png" alt="Alt text"><br><img src="../../../../images/machineImg/87.png" alt="Alt text"></p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -203,16 +371,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/11/linear_algebra/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yokiyang.github.io/2019/09/11/linear_algebra/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/30/decisiontree/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">决策树</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -227,180 +454,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-decisiontree" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/30/decisiontree/">决策树</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/30/decisiontree/" class="archive-article-date">
-  	<time datetime="2019-08-30T01:09:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>决策树是附加概率结果的一个树状的决策图，是直观的运用统计概率分布的图法。机器学习中决策树是一个预测模型，它表示对象属性和对象值之间的一种映射，树中的每一个节点表示对象属性的判断条件，其分支表示符合节点条件的对象。树的叶子节点表示对象所属的预测结果。  </p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/机器学习//" class="article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/30/decisiontree/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-标量，向量，矩阵和张量"><span class="toc-number">1.</span> <span class="toc-text">一. 标量，向量，矩阵和张量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-标量（scalar）"><span class="toc-number">1.1.</span> <span class="toc-text">1. 标量（scalar）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-向量（vector）"><span class="toc-number">1.2.</span> <span class="toc-text">2. 向量（vector）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-矩阵（matrix）"><span class="toc-number">1.3.</span> <span class="toc-text">3. 矩阵（matrix）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-张量（tensor）"><span class="toc-number">1.4.</span> <span class="toc-text">4. 张量（tensor）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-矩阵的运算"><span class="toc-number">2.</span> <span class="toc-text">二. 矩阵的运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-矩阵转置"><span class="toc-number">2.1.</span> <span class="toc-text">1. 矩阵转置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-矩阵的加法"><span class="toc-number">2.2.</span> <span class="toc-text">2. 矩阵的加法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-矩阵加法"><span class="toc-number">2.2.1.</span> <span class="toc-text">2.1 矩阵加法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-矩阵与矩阵相加"><span class="toc-number">2.2.2.</span> <span class="toc-text">2.2 矩阵与矩阵相加</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-矩阵与标量相加"><span class="toc-number">2.2.3.</span> <span class="toc-text">2.3 矩阵与标量相加</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-矩阵的乘法"><span class="toc-number">2.3.</span> <span class="toc-text">3. 矩阵的乘法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-矩阵与标量的乘法"><span class="toc-number">2.3.1.</span> <span class="toc-text">3.1 矩阵与标量的乘法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-矩阵与矩阵的乘法"><span class="toc-number">2.3.2.</span> <span class="toc-text">3.2 矩阵与矩阵的乘法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三-单位矩阵和逆矩阵"><span class="toc-number">3.</span> <span class="toc-text">三. 单位矩阵和逆矩阵</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四-范数"><span class="toc-number">4.</span> <span class="toc-text">四. 范数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-什么是范数？"><span class="toc-number">4.1.</span> <span class="toc-text">1. 什么是范数？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-几类范数的定义"><span class="toc-number">4.2.</span> <span class="toc-text">2. 几类范数的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-L-P范数"><span class="toc-number">4.2.1.</span> <span class="toc-text">2.1 L-P范数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-L0范数"><span class="toc-number">4.2.2.</span> <span class="toc-text">2.2 L0范数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-L1范数"><span class="toc-number">4.2.3.</span> <span class="toc-text">2.3 L1范数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-L2范数"><span class="toc-number">4.2.4.</span> <span class="toc-text">2.4 L2范数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-范数"><span class="toc-number">4.2.5.</span> <span class="toc-text">2.5 范数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五-线性相关和生成子空间"><span class="toc-number">5.</span> <span class="toc-text">五. 线性相关和生成子空间</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-什么是线性相关"><span class="toc-number">5.1.</span> <span class="toc-text">1. 什么是线性相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-什么是生成子空间？"><span class="toc-number">5.2.</span> <span class="toc-text">2. 什么是生成子空间？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六-特征分解"><span class="toc-number">6.</span> <span class="toc-text">六. 特征分解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-如何求解矩阵的特征值和特征向量？"><span class="toc-number">6.1.</span> <span class="toc-text">1. 如何求解矩阵的特征值和特征向量？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-关于矩阵的特征向量和特征值的含义"><span class="toc-number">6.2.</span> <span class="toc-text">2. 关于矩阵的特征向量和特征值的含义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#几何意义"><span class="toc-number">6.2.1.</span> <span class="toc-text">几何意义</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七-奇异值分解"><span class="toc-number">7.</span> <span class="toc-text">七. 奇异值分解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何求解矩阵U-V-D？"><span class="toc-number">7.1.</span> <span class="toc-text">如何求解矩阵U,V,D？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用Python中的Numpy实现"><span class="toc-number">7.2.</span> <span class="toc-text">用Python中的Numpy实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#八-Moore-Penrose伪逆"><span class="toc-number">8.</span> <span class="toc-text">八. Moore-Penrose伪逆</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#九-附：行列式的运算例子"><span class="toc-number">9.</span> <span class="toc-text">九. 附：行列式的运算例子</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
   
-    <article id="post-machine_learning" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/30/machine_learning/">人工智能，机器学习，深度学习的区别</a>
-    </h1>
   
 
-        
-        <a href="/2019/08/30/machine_learning/" class="archive-article-date">
-  	<time datetime="2019-08-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>如图所示：人工智能最大，此概念也最先问世；然后是机器学习，出现的稍晚；最后才是深度学习。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/30/machine_learning/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
+
   
 
 
@@ -435,8 +514,8 @@
     <script>
   var yiliaConfig = {
   	mathjax: false,
-  	isHome: true,
-  	isPost: false,
+  	isHome: false,
+  	isPost: true,
   	isArchive: false,
   	isTag: false,
   	isCategory: false,

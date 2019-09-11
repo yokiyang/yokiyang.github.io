@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="https://yokiyang.github.io">
   <title>决策树 | Yoki的读书笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="决策树–基础决策树是附加概率结果的一个树状的决策图，是直观的运用统计概率分布的图法。机器学习中决策树是一个预测模型，它表示对象属性和对象值之间的一种映射，树中的每一个节点表示对象属性的判断条件，其分支表示符合节点条件的对象。树的叶子节点表示对象所属的预测结果。">
+  <meta name="description" content="决策树是附加概率结果的一个树状的决策图，是直观的运用统计概率分布的图法。机器学习中决策树是一个预测模型，它表示对象属性和对象值之间的一种映射，树中的每一个节点表示对象属性的判断条件，其分支表示符合节点条件的对象。树的叶子节点表示对象所属的预测结果。">
 <meta name="keywords" content="Python,机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="决策树">
 <meta property="og:url" content="https://yokiyang.github.io/2019/08/30/decisiontree/index.html">
 <meta property="og:site_name" content="Yoki的读书笔记">
-<meta property="og:description" content="决策树–基础决策树是附加概率结果的一个树状的决策图，是直观的运用统计概率分布的图法。机器学习中决策树是一个预测模型，它表示对象属性和对象值之间的一种映射，树中的每一个节点表示对象属性的判断条件，其分支表示符合节点条件的对象。树的叶子节点表示对象所属的预测结果。">
+<meta property="og:description" content="决策树是附加概率结果的一个树状的决策图，是直观的运用统计概率分布的图法。机器学习中决策树是一个预测模型，它表示对象属性和对象值之间的一种映射，树中的每一个节点表示对象属性的判断条件，其分支表示符合节点条件的对象。树的叶子节点表示对象所属的预测结果。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://yokiyang.github.io/images/decisiontreeImg/1.png">
 <meta property="og:image" content="https://yokiyang.github.io/images/decisiontreeImg/2.png">
@@ -95,10 +95,10 @@
 <meta property="og:image" content="https://yokiyang.github.io/images/decisiontreeImg/77.PNG">
 <meta property="og:image" content="https://yokiyang.github.io/images/decisiontreeImg/78.PNG">
 <meta property="og:image" content="https://yokiyang.github.io/images/decisiontreeImg/81.PNG">
-<meta property="og:updated_time" content="2019-08-30T07:55:11.548Z">
+<meta property="og:updated_time" content="2019-09-11T08:15:02.878Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="决策树">
-<meta name="twitter:description" content="决策树–基础决策树是附加概率结果的一个树状的决策图，是直观的运用统计概率分布的图法。机器学习中决策树是一个预测模型，它表示对象属性和对象值之间的一种映射，树中的每一个节点表示对象属性的判断条件，其分支表示符合节点条件的对象。树的叶子节点表示对象所属的预测结果。">
+<meta name="twitter:description" content="决策树是附加概率结果的一个树状的决策图，是直观的运用统计概率分布的图法。机器学习中决策树是一个预测模型，它表示对象属性和对象值之间的一种映射，树中的每一个节点表示对象属性的判断条件，其分支表示符合节点条件的对象。树的叶子节点表示对象所属的预测结果。">
 <meta name="twitter:image" content="https://yokiyang.github.io/images/decisiontreeImg/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Yoki的读书笔记" type="application/atom+xml">
@@ -259,7 +259,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="决策树–基础"><a href="#决策树–基础" class="headerlink" title="决策树–基础"></a>决策树–基础</h1><p>决策树是附加概率结果的一个树状的决策图，是直观的运用统计概率分布的图法。机器学习中决策树是一个预测模型，它表示对象属性和对象值之间的一种映射，树中的每一个节点表示对象属性的判断条件，其分支表示符合节点条件的对象。树的叶子节点表示对象所属的预测结果。  </p>
+        <p>决策树是附加概率结果的一个树状的决策图，是直观的运用统计概率分布的图法。机器学习中决策树是一个预测模型，它表示对象属性和对象值之间的一种映射，树中的每一个节点表示对象属性的判断条件，其分支表示符合节点条件的对象。树的叶子节点表示对象所属的预测结果。  </p>
 <a id="more"></a>
 <p><img src="../../../../images/decisiontreeImg/1.png" alt="Alt text"><br>案例：<br>父节点和子节点是相对的，说白了子节点由父节点根据某一规则分裂而来，然后子节点作为新的父节点继续分裂，直至不能分裂为止。而根节点是没有父节点的节点。即初始分裂节点，叶子节点是没有子节点的节点，如下图：<br><img src="../../../../images/decisiontreeImg/2.png" alt="Alt text"><br>决策树利用如上图所示的树结构进行决策，每一个非叶子节点是一个判断条件，每一个叶子节点是结论。从跟节点开始，经过多次判断得出结论。<br>决策树如何做决策？<br>从一个分类例子说起：<br>银行希望能够通过一个人的信息（包括职业，年龄，收入，学历）去判断他是否有贷款的意向，从而更有针对性地完成工作。下表是银行现在能够掌握的信息，我们的目标是通过对下面的数据进行分析建立一个预测用户贷款的模型。<br><img src="../../../../images/decisiontreeImg/3.PNG" alt="Alt text"><br>上面有4个客户的属性，如何综合利用这些属性去判断用户的贷款意向？决策树的做法是每次选择一个数据进行判断，如果不能得出结论，继续选择其他属性进行判断，直到能够“肯定地”判断出用户的类型或者是上述属性都已经使用完毕。比如说我们要判断一个客户的贷款意向，我们可以先根据客户的职业进行判断，如果不能得出结论，再根据年龄作判断，这样以此类推，直到可以得出结论为止。<br>决策树用树结构实现上述的判断流程：<br><img src="../../../../images/decisiontreeImg/4.PNG" alt="Alt text"><br>通过上面的训练数据，可以得出下面所示的决策树，其输入是用户的信息，输出是用户的贷款意向<br>如果要判断某一客户是否有贷款的意向，直接根据用户的职业，收入，年龄以及学历就可以分析得出用户的类型。如某客户的信息为：{职业，年龄，收入，学历}={工人，39, 1800，小学}，将信息输入上述决策树，可以得到下列的分析步骤和结论。<br>第一步：根据客户的职业进行判断，选择“工人”分支<br><img src="../../../../images/decisiontreeImg/5.PNG" alt="Alt text"><br>第二步：根据客户的年龄进行选择，选择年龄“&lt;=40”这一分支<br><img src="../../../../images/decisiontreeImg/6.PNG" alt="Alt text"><br>第三步：根据客户的学历进行选择，选择“小学”这一分支，得出该客户无贷款意向的结论<br><img src="../../../../images/decisiontreeImg/7.PNG" alt="Alt text">  </p>
 <p>那么如何构建上面那样的一颗决策树呢？决策树的构建是数据逐步分裂的过程，构建的步骤如下：<br>步骤1：将所有的数据看成是一个节点，进入步骤2；<br>步骤2：从给所有的数据特征中挑选一个数据特征对节点进行分割，进入步骤3；<br>步骤3：生成若干孩子节点，对每一个孩子节点进行判断，如果满足停止分裂的条件，进入步骤4；否则进入步骤2；<br>步骤4：设置该节点是子节点，其输出的结果为该节点数量占比最大的类别；<br>从上述步骤可以看，决策生成过程中有三个重要的问题：<br>（1）数据如何分割<br>（2）如何选择分裂属性<br>（3）什么时候停止分裂  </p>
@@ -432,6 +432,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/09/11/linear_algebra/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          线性代数
+        
+      </div>
+    </a>
+  
   
     <a href="/2019/08/30/machine_learning/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">人工智能，机器学习，深度学习的区别</div>
@@ -461,7 +470,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#决策树–基础"><span class="toc-number">1.</span> <span class="toc-text">决策树–基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据分割"><span class="toc-number">1.1.</span> <span class="toc-text">数据分割</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分裂属性的选择"><span class="toc-number">1.2.</span> <span class="toc-text">分裂属性的选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）信息增益"><span class="toc-number">1.2.1.</span> <span class="toc-text">（1）信息增益</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）信息增益率"><span class="toc-number">1.2.2.</span> <span class="toc-text">（2）信息增益率</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#停止分裂的条件"><span class="toc-number">1.3.</span> <span class="toc-text">停止分裂的条件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#决策树–剪枝"><span class="toc-number">2.</span> <span class="toc-text">决策树–剪枝</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#决策树–ID3"><span class="toc-number">3.</span> <span class="toc-text">决策树–ID3</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#决策树–C4-5"><span class="toc-number">4.</span> <span class="toc-text">决策树–C4.5</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#决策树–CART"><span class="toc-number">5.</span> <span class="toc-text">决策树–CART</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#随机森林"><span class="toc-number">6.</span> <span class="toc-text">随机森林</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#决策树实例及python实现"><span class="toc-number">7.</span> <span class="toc-text">决策树实例及python实现</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据分割"><span class="toc-number">1.</span> <span class="toc-text">数据分割</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分裂属性的选择"><span class="toc-number">2.</span> <span class="toc-text">分裂属性的选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）信息增益"><span class="toc-number">2.1.</span> <span class="toc-text">（1）信息增益</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）信息增益率"><span class="toc-number">2.2.</span> <span class="toc-text">（2）信息增益率</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#停止分裂的条件"><span class="toc-number">3.</span> <span class="toc-text">停止分裂的条件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#决策树–剪枝"><span class="toc-number"></span> <span class="toc-text">决策树–剪枝</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#决策树–ID3"><span class="toc-number"></span> <span class="toc-text">决策树–ID3</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#决策树–C4-5"><span class="toc-number"></span> <span class="toc-text">决策树–C4.5</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#决策树–CART"><span class="toc-number"></span> <span class="toc-text">决策树–CART</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#随机森林"><span class="toc-number"></span> <span class="toc-text">随机森林</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#决策树实例及python实现"><span class="toc-number"></span> <span class="toc-text">决策树实例及python实现</span></a>
                     </div>
                 </span>
             </div>
